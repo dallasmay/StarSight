@@ -1,0 +1,15 @@
+.nav {
+  border: solid red 5px;
+  /* display: inline-block; */
+}
+.nav ul {
+  margin: 0;
+}
+.nav li {
+  font-size: 2rem;
+  padding: 0 1rem 0 0;
+  list-style: none;
+}
+.link-container {
+  display: flex;
+}

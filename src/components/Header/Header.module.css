@@ -1,0 +1,10 @@
+.heading {
+  /* display: inline; */
+  border: solid black 1px;
+  margin: 0;
+}
+.header-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
