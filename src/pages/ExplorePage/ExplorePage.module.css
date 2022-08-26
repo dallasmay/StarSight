@@ -1,0 +1,6 @@
+.explore-container {
+    max-width: 800px;
+    height: 100vh;
+    background-color: lightblue;
+    margin: 0 auto;
+}

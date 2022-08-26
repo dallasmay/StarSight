@@ -1,10 +1,21 @@
+.header {
+  background-color: rgb(106, 153, 240);
+  /* position: fixed;
+  width: 100%; */
+}
+.header-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .heading {
   /* display: inline; */
   border: solid black 1px;
   margin: 0;
 }
-.header-flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.moon {
+  height: 8rem;
+  width: 8rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
 }

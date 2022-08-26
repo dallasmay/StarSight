@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import { Fragment } from "react";
 
 import Header from "./components/Header/Header";
-import LandingPage from "./pages/LandingPage";
-import ExplorePage from "./pages/ExplorePage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import ExplorePage from "./pages/ExplorePage/ExplorePage";
 
 function App() {
   return (

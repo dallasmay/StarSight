@@ -1,0 +1,47 @@
+/* h1 {
+    margin: 0;
+    padding: 0;
+} */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  font-family: var(--ErnBold);
+  font-size: 10.6rem;
+  margin: 0;
+}
+.heading-2 {
+  font-size: 3.73rem;
+  margin: 0;
+}
+.line {
+  border: solid var(--grey) 2px;
+  background-color: var(--grey);
+  margin: 0 5rem;
+  width: 20rem;
+  border-radius: 5px;
+}
+.button {
+  font-family: var(--ErnRegular);
+  font-size: 3.73rem;
+  color: var(--grey);
+  background-color: var(--darkblue);
+  border: solid 3px var(--grey);
+  border-radius: 20px;
+  margin: 3rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+.button:hover {
+    background-color: var(--grey);
+    color: var(--darkblue);
+    transition-duration: .5s;
+}

@@ -20,6 +20,8 @@
   --ErnBold: "ErnestinePro-Bold";
   --ErnBoldItalic: "ErnestinePro-BoldItalic";
   --ErnDemiBoldItalic: "ErnestinePro-DemiboldItalic";
+  --darkblue: #151643;
+  --grey: #E0CED4;
 }
 
 html {
@@ -35,6 +37,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-color: var(--darkblue);
+  color: var(--grey);
 }
 
 code {
