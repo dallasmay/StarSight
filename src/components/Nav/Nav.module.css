@@ -13,3 +13,8 @@
 .link-container {
   display: flex;
 }
+a {
+  color: var(--grey);
+  text-decoration: none;
+}
+

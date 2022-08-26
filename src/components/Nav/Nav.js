@@ -9,7 +9,9 @@ const Nav = () => {
         <Link to="/explore">
           <li>Explore</li>
         </Link>
-        <li>Find</li>
+        <Link to="/find">
+          <li>Find</li>
+        </Link>
         <li>Track</li>
         <li>Login/Signup</li>
       </ul>
