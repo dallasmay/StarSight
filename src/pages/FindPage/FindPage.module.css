@@ -1,13 +1,14 @@
 .find-container {
   width: 75%;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: var(--secondaryblue);
   margin: 0 auto;
 }
 .heading1 {
+  /* color: var(--lightpink); */
   font-family: var(--ErnRegular);
   font-size: 5rem;
-  margin: 0;
-  padding: 10rem 0 0 0;
+  margin: 0 0 3rem 0;
+  padding: 12rem 0 0 0;
   text-align: center;
 }

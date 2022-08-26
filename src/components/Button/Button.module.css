@@ -1,0 +1,14 @@
+.button {
+  font-size: 3rem;
+  font-family: var(--ErnRegular);
+  color: var(--lightblue);
+  background-color: var(--lightpink);
+  border: none;
+  border-radius: 15px;
+  padding: .5rem 2.5rem;
+  cursor: pointer;
+}
+.button:hover {
+    background-color: #b38faf;
+    transition-duration: .5s;
+}
