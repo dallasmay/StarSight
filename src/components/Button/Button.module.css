@@ -5,10 +5,11 @@
   background-color: var(--lightpink);
   border: none;
   border-radius: 15px;
-  padding: .5rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   cursor: pointer;
+  transition-duration: 0.5s;
 }
 .button:hover {
-    background-color: #b38faf;
-    transition-duration: .5s;
+  background-color: #b38faf;
+  transition-duration: 0.5s;
 }
