@@ -1,6 +1,6 @@
 .find-container {
   width: 75%;
-  /* height: 100vh; */
+  height: 100%;
   background-color: var(--secondaryblue);
   margin: 0 auto;
 }

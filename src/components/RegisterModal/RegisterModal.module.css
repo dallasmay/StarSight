@@ -1,0 +1,45 @@
+.modal-container {
+  /* height: 50%; */
+  max-width: 60rem;
+  background-color: var(--secondaryblue);
+  border: solid 3rem var(--darkblue);
+  margin: 10rem auto 0 auto;
+  padding: 2rem 2rem;
+}
+.modal-heading {
+  font-size: 4.5rem;
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+}
+.register-form {
+  font-family: Verdana;
+}
+.label {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-style: italic;
+  margin: 0 0 .75rem 0;
+}
+.input {
+  display: block;
+  font-size: 2rem;
+  font-family: Verdana;
+  margin: 0 0 1rem 0;
+  padding: .5rem;
+  background-color: var(--grey);
+  border: none;
+}
+.no-acct {
+  display: inline;
+  font-style: italic;
+  margin: 0 0.5rem 0 0;
+}
+.new-acct-link {
+  font-style: italic;
+  color: rgb(84, 84, 240);
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 0 0;
+}

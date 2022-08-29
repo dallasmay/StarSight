@@ -18,7 +18,7 @@ const LoginModal = () => {
         </label>
         <input type="password" id="password" className={styles.input} />
         <p className={styles["no-acct"]}>Don't have an account?</p>
-        <Link to="/" className={styles["new-acct-link"]}>Create account here</Link>
+        <Link to="/register" className={styles["new-acct-link"]}>Create account here</Link>
         <div className={styles["btn-container"]}>
           <Button>LOGIN</Button>
         </div>
