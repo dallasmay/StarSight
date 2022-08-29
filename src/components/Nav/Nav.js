@@ -13,7 +13,9 @@ const Nav = () => {
           <li>Find</li>
         </Link>
         <li>Track</li>
-        <li>Login/Signup</li>
+        <Link to="/login">
+          <li>Login/Signup</li>
+        </Link>
       </ul>
     </nav>
   );

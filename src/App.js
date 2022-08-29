@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import FindPage from "./pages/FindPage/FindPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/explore" element={<ExplorePage />}/>
-        <Route path="/find" element={<FindPage />}/>
+        <Route path="/explore" element={<ExplorePage />} />
+        <Route path="/find" element={<FindPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Fragment>
   );
