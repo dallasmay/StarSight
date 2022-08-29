@@ -38,11 +38,11 @@
   border-radius: 20px;
   margin: 3rem;
   padding: 1rem 3rem;
-  cursor: pointer;
   transition-duration: 0.5s;
 }
 .button:hover {
   background-color: var(--grey);
   color: var(--darkblue);
   transition-duration: 0.5s;
+  cursor: pointer;
 }

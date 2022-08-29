@@ -1,5 +1,7 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
+const bcrypt = require("bcrypt");
+
 const { CONNECTION_STRING } = process.env;
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
@@ -40,7 +42,8 @@ CREATE TABLE galaxies (
         `
   CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  email VARCHAR(100) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
   password_hash VARCHAR(300) NOT NULL
 );`
       )
@@ -49,5 +52,26 @@ CREATE TABLE galaxies (
         console.log("Database seeded successfully");
       })
       .catch((err) => console.log("Error seeding database", err));
+  },
+  register: (req, res) => {
+    const { name, email, password } = req.body;
+    bcrypt.hash(password, 10, (err, hash) => {
+      if (err) {
+        return console.log(err);
+      } else {
+        sequelize
+          .query(
+            `INSERT INTO users (name, email, password_hash)
+    VALUES('${name}', '${email}', '${hash}');`
+          )
+          .then((dbRes) =>
+            res.status(200).send("User successfully registered")
+          )
+          .catch((err) => {
+            res.status(500).send({ err, message: "Error registering user" });
+          });
+      }
+    }
+    );
   },
 };
