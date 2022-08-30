@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import Header from "./components/Header/Header";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -7,16 +7,25 @@ import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import FindPage from "./pages/FindPage/FindPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import TrackPage from "./pages/TrackPage/TrackPage";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loggedInDrill = (state) => {
+    console.log(`This is in the App component: ${state}`);
+    setIsLoggedIn(state);
+  }
+
   return (
     <Fragment>
-      <Header />
+      <Header isLoggedIn={isLoggedIn}/>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/find" element={<FindPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/track" element={<TrackPage />} />
+        <Route path="/login" element={<LoginPage loggedInDrill={loggedInDrill} />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </Fragment>

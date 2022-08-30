@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -6,9 +6,10 @@ import Button from "../Button/Button";
 
 import styles from "./LoginModal.module.css";
 
-const LoginModal = () => {
+const LoginModal = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const loginSubmitHandler = (evt) => {
     evt.preventDefault();
@@ -17,9 +18,12 @@ const LoginModal = () => {
       password,
     }
     axios.post("http://localhost:4000/login", loginBody).then((res) => {
-      console.log(res.data);
+      setIsLoggedIn(res.data);
     });
   }
+  useEffect(() => {
+    props.loggedInDrill(isLoggedIn);
+  }, [isLoggedIn]);
 
   return (
     <div className={styles["modal-container"]}>
