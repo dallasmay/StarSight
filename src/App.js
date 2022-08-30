@@ -8,6 +8,7 @@ import FindPage from "./pages/FindPage/FindPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import TrackPage from "./pages/TrackPage/TrackPage";
+import FindBodyPage from "./pages/FindBodyPage/FindBodyPage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/find" element={<FindPage />} />
+        <Route path="/find-body" element={<FindBodyPage />} />
         <Route path="/track" element={<TrackPage />} />
         <Route path="/login" element={<LoginPage loggedInDrill={loggedInDrill} />} />
         <Route path="/register" element={<RegisterPage />} />

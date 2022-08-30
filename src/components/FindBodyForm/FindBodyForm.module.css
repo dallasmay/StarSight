@@ -1,0 +1,9 @@
+.planet-select, h2 {
+  font-size: 4rem;
+  font-weight: normal;
+  display: block;
+  /* margin-bottom: 0; */
+}
+.coords {
+    font-size: 3.5rem;
+}
