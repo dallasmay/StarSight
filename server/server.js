@@ -9,13 +9,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const { seed, register } = require("./controller");
+const { seed, register, login } = require("./controller");
 
 // DEV ENDPOINTS
 app.get("/seed", seed);
 
 // ENDPOINTS
-app.post("/register", register)
+app.post("/register", register);
+app.post("/login", login);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server running on port ${SERVER_PORT}`);

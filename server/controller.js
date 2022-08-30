@@ -64,14 +64,27 @@ CREATE TABLE galaxies (
             `INSERT INTO users (name, email, password_hash)
     VALUES('${name}', '${email}', '${hash}');`
           )
-          .then((dbRes) =>
-            res.status(200).send("User successfully registered")
-          )
+          .then((dbRes) => res.status(200).send("User successfully registered"))
           .catch((err) => {
             res.status(500).send({ err, message: "Error registering user" });
           });
       }
-    }
-    );
+    });
+  },
+  login: (req, res) => {
+    const { email, password } = req.body;
+    sequelize
+      .query(`SELECT password_hash FROM users WHERE email = '${email}'`)
+      .then((dbRes) => {
+        const passHash = dbRes[0][0].password_hash;
+        bcrypt.compare(password, passHash, (err, result) => {
+          if (err) {
+            return console.log(err);
+          } else {
+            return res.status(200).send(result);
+          }
+        });
+      })
+      .catch((err) => console.log(err));
   },
 };
