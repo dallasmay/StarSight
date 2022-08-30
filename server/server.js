@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const { seed, register, login } = require("./controller");
+const { seed, register, login, findBody } = require("./controller");
 
 // DEV ENDPOINTS
 app.get("/seed", seed);
@@ -17,6 +17,8 @@ app.get("/seed", seed);
 // ENDPOINTS
 app.post("/register", register);
 app.post("/login", login);
+
+app.post("/find-body", findBody);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server running on port ${SERVER_PORT}`);

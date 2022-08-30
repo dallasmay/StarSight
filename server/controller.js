@@ -87,4 +87,7 @@ CREATE TABLE galaxies (
       })
       .catch((err) => console.log(err));
   },
+  findBody: (req, res) => {
+    console.log(req.body);
+  }
 };
