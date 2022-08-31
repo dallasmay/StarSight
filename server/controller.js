@@ -13,6 +13,8 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
   },
 });
 
+const FEET_TO_METERS = 0.3048;
+
 module.exports = {
   // OTHER TABLES
 
@@ -88,6 +90,14 @@ CREATE TABLE galaxies (
       .catch((err) => console.log(err));
   },
   findBody: (req, res) => {
-    console.log(req.body);
-  }
+    const { body, latitude, longitude, elevation, unit, userDate, userTime } =
+      req.body;
+    let elevationInMeters;
+    if (unit === "feet") {
+      elevationInMeters = elevation * FEET_TO_METERS;
+    } else {
+      elevationInMeters = elevation;
+    }
+    console.log(body, latitude, longitude, elevationInMeters, userDate, userTime);
+  },
 };

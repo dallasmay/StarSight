@@ -14,12 +14,20 @@ const FindBodyForm = () => {
 
   const findBodySubmitHandler = (evt) => {
     evt.preventDefault();
+    const date = new Date();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const userDate = `${year}-${month}-${day}`;
+    const userTime = `${date.getHours()}:${date.getMinutes()}:00`;
     let findBody = {
       body,
       latitude,
       longitude,
       elevation,
       unit,
+      userDate,
+      userTime,
     };
     axios.post("http://localhost:4000/find-body", findBody);
   };
