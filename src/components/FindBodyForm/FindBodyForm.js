@@ -18,7 +18,9 @@ const FindBodyForm = () => {
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const year = date.getFullYear();
-    const userDate = `${year}-${month}-${day}`;
+    // Adding a zero in front of month if less than 10 - api needs date in format 00:00:00
+    const userDate =
+      month < 10 ? `${year}-0${month}-${day}` : `${year}-${month}-${day}`;
     const userTime = `${date.getHours()}:${date.getMinutes()}:00`;
     let findBody = {
       body,
@@ -29,7 +31,7 @@ const FindBodyForm = () => {
       userDate,
       userTime,
     };
-    axios.post("http://localhost:4000/find-body", findBody);
+    axios.post("http://localhost:4000/find-body", findBody).then((res) => console.log(res.data.data.table.rows[0].cells[0].position.horizontal));
   };
 
   return (

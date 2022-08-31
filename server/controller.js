@@ -1,8 +1,13 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
+const axios = require("axios");
 
-const { CONNECTION_STRING } = process.env;
+const ASTRO_API_URL = "https://api.astronomyapi.com/api/v2";
+
+const { CONNECTION_STRING, APPLICATION_ID, APPLICATION_SECRET } = process.env;
+
+const apiHash = btoa(`${APPLICATION_ID}:${APPLICATION_SECRET}`);
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
   dialect: "postgres",
@@ -89,7 +94,7 @@ CREATE TABLE galaxies (
       })
       .catch((err) => console.log(err));
   },
-  findBody: (req, res) => {
+  findBody: (req, response) => {
     const { body, latitude, longitude, elevation, unit, userDate, userTime } =
       req.body;
     let elevationInMeters;
@@ -98,6 +103,20 @@ CREATE TABLE galaxies (
     } else {
       elevationInMeters = elevation;
     }
-    console.log(body, latitude, longitude, elevationInMeters, userDate, userTime);
+    // console.log(body, latitude, longitude, elevationInMeters, userDate, userTime);
+    // Astro API Call
+    axios
+      .get(
+        `${ASTRO_API_URL}/bodies/positions/${body}?latitude=${latitude}&longitude=${longitude}&elevation=${elevationInMeters}&from_date=${userDate}&to_date=${userDate}&time=${userTime}`,
+        {
+          headers: {
+            Authorization: `Basic ${apiHash}`,
+          },
+        }
+      )
+      .then((res) => {
+        response.status(200).send(res.data);
+      })
+      .catch((err) => console.log(err));
   },
 };
