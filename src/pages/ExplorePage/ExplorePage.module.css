@@ -1,9 +1,50 @@
 .explore-container {
-    width: 75%;
-    height: 100vh;
-    background-color: var(--secondaryblue);
-    margin: 0 auto;
+  width: 75%;
+  height: 100vh;
+  background-color: var(--secondaryblue);
+  margin: 0 auto;
+}
+.explore-card {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 0 0 3rem;
+  margin: 0 0 5rem 0;
+}
+.img-placeholder {
+  display: inline-block;
+  height: 150px;
+  width: 300px;
+  background-color: grey;
+}
+.content-container {
+  margin: 0 0 0 3rem;
 }
 .heading1 {
-    margin: 0;
+    display: inline;
+  font-weight: normal;
+  font-size: 5.5rem;
+  margin: 0;
+  border-bottom: solid 4px var(--grey);
+}
+p {
+  margin: 1.5rem 0 5rem 0;
+}
+.btn {
+  font-size: 2rem;
+  font-family: var(--ErnRegular);
+  color: var(--grey);
+  background-color: var(--secondaryblue);
+  padding: 0.75rem 3rem;
+  border: solid 2px var(--grey);
+  border-radius: 25px;
+  transition-duration: 0.5s;
+}
+.btn:hover {
+  background-color: var(--grey);
+  color: var(--darkblue);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.test {
+    padding-top: 12rem;
 }

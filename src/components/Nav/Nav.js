@@ -13,7 +13,7 @@ const Nav = (props) => {
         <Link to="/find">
           <li>Find</li>
         </Link>
-        <Link to={props.isLoggedIn ? "/track" : "/login"}>
+        <Link to="/track">
           <li>Track</li>
         </Link>
       </ul>
@@ -27,7 +27,7 @@ const Nav = (props) => {
         <Link to="/find">
           <li>Find</li>
         </Link>
-        <Link to={props.isLoggedIn ? "/track" : "/login"}>
+        <Link to="/track">
           <li>Track</li>
         </Link>
         <Link to="/login">

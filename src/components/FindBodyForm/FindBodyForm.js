@@ -55,7 +55,7 @@ const FindBodyForm = () => {
         <option value="neptune">Neptune</option>
         <option value="pluto">Pluto</option>
       </select>
-      <h2>My current coordinates:</h2>
+      <h2 className={styles.heading2}>My current coordinates:</h2>
       <label htmlFor="latitude" className={styles.coords}>
         Latitude:
       </label>

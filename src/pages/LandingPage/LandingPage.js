@@ -12,7 +12,7 @@ const LandingPage = () => {
           </div>
           <div className={styles["main-container"]}>
             <span className={styles.line}></span>
-            <h2 className={styles["heading-2"]}>MADE EASY</h2>
+            <h2 className={styles.heading2}>MADE EASY</h2>
             <span className={styles.line}></span>
           </div>
           <div className={styles["main-container"]}>

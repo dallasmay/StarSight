@@ -18,8 +18,10 @@
   font-size: 10.6rem;
   margin: 0;
 }
-.heading-2 {
+.heading2 {
+  /* font-family: var(--ErnBold); */
   font-size: 3.73rem;
+  /* font-weight: normal; */
   margin: 0;
 }
 .line {
