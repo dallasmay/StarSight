@@ -1,9 +1,25 @@
-.planet-select, h2 {
+.form {
+  padding: 0 0 0 3rem;
+}
+.planet-select,
+h2 {
   font-size: 4rem;
   font-weight: normal;
   display: block;
   /* margin-bottom: 0; */
 }
+select {
+  font-family: var(--ErnRegular);
+  font-size: 3rem;
+  color: var(--secondaryblue);
+  background-color: var(--grey);
+}
+input {
+  font-size: 2rem;
+  background-color: var(--grey);
+  border: none;
+  margin: 0 1rem 1rem 1rem;
+}
 .coords {
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 }

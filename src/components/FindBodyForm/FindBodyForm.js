@@ -35,7 +35,7 @@ const FindBodyForm = () => {
   };
 
   return (
-    <form onSubmit={findBodySubmitHandler}>
+    <form onSubmit={findBodySubmitHandler} className={styles.form}>
       <label htmlFor="body-select" className={styles["planet-select"]}>
         What I'm trying to find:
       </label>
@@ -88,7 +88,7 @@ const FindBodyForm = () => {
         id="feet"
         onChange={(evt) => setUnit(evt.target.id)}
       />
-      <label htmlFor="feet">in feet</label>
+      <label htmlFor="feet" className={styles.units}>in feet</label>
       <input
         type="radio"
         name="unit"

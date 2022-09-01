@@ -14,7 +14,7 @@ const PlanetCard = () => {
         One of the most well-known celestial bodies, the moon orbits the Earth
         every 27.3 days and is the force behind our ocean tides
       </p>
-      <Link to="/">
+      <Link to="/find-body">
         <Button>FIND</Button>
       </Link>
     </div>

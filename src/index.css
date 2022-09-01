@@ -22,9 +22,9 @@
   --ErnDemiBoldItalic: "ErnestinePro-DemiboldItalic";
   --darkblue: #151643;
   --secondaryblue: #212053;
-  --lightblue: #464E99;
-  --grey: #E0CED4;
-  --lightpink: #D7B1D3;
+  --lightblue: #464e99;
+  --grey: #e0ced4;
+  --lightpink: #d7b1d3;
 }
 
 html {
@@ -43,6 +43,7 @@ body {
   box-sizing: border-box;
   background-color: var(--darkblue);
   color: var(--grey);
+  /* padding-top: 96.4px; */
 }
 #root {
   height: 100vh;
