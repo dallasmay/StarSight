@@ -1,0 +1,52 @@
+.card {
+  border-radius: 5px;
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  /* color: var(--lightpink); */
+  background-color: var(--lightblue);
+  padding: 2rem 0;
+  margin: 0 0 1.5rem 0;
+}
+.form-flex-container {
+  display: flex;
+  justify-content: center;
+}
+.name-input {
+  color: var(--darkblue);
+  background-color: var(--grey);
+  border: none;
+  text-align: center;
+  font-size: 3rem;
+  font-family: var(--ErnRegular);
+  margin: 0 0 2rem 0;
+}
+.label {
+  font-size: 3rem;
+  margin: 0 1rem 0 0;
+}
+.seen-q {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+.radio-label {
+  font-size: 2rem;
+}
+.radio {
+  margin: 0 2rem 0 .5rem;
+}
+.submit-btn {
+  color: var(--lightblue);
+  background-color: var(--lightpink);
+  font-size: 2rem;
+  font-family: var(--ErnRegular);
+  padding: 0.5rem 2rem;
+  margin: 1rem 0 0 0;
+  border-radius: 5px;
+  border: none;
+  transition-duration: 0.5s;
+}
+.submit-btn:hover {
+  background-color: #b38faf;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}

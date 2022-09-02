@@ -61,6 +61,7 @@ const FindBodyForm = () => {
       </label>
       <input
         type="number"
+        className={styles.input}
         id="latitude"
         step="0.0000001"
         onChange={(evt) => setLatitude(evt.target.value)}
@@ -70,6 +71,7 @@ const FindBodyForm = () => {
       </label>
       <input
         type="number"
+        className={styles.input}
         id="longitude"
         step="0.0000001"
         onChange={(evt) => setLongitude(evt.target.value)}
@@ -79,18 +81,23 @@ const FindBodyForm = () => {
       </label>
       <input
         type="number"
+        className={styles.input}
         id="elevation"
         onChange={(evt) => setElevation(evt.target.value)}
       />
       <input
         type="radio"
+        className={styles.input}
         name="unit"
         id="feet"
         onChange={(evt) => setUnit(evt.target.id)}
       />
-      <label htmlFor="feet" className={styles.units}>in feet</label>
+      <label htmlFor="feet" className={styles.units}>
+        in feet
+      </label>
       <input
         type="radio"
+        className={styles.input}
         name="unit"
         id="meters"
         onChange={(evt) => setUnit(evt.target.id)}

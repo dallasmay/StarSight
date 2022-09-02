@@ -52,3 +52,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.flex-container-justify-center {
+  display: flex;
+  justify-content: center;
+}

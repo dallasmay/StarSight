@@ -1,4 +1,5 @@
-import ChecklistCard from "../../components/ChecklistCard/ChecklistCard";
+import ChecklistCard from "../../components/Checklist Components/ChecklistCard/ChecklistCard";
+import AddChecklistCard from "../../components/Checklist Components/AddChecklistCard/AddChecklistCard";
 
 import styles from "./ChecklistPage.module.css";
 
@@ -13,6 +14,7 @@ const ChecklistPage = () => {
               <button className={styles["add-btn"]}>&#43;</button>
             </div>
           </div>
+          <AddChecklistCard />
           <ChecklistCard />
         </div>
       </div>

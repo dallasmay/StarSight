@@ -14,7 +14,7 @@ select {
   color: var(--secondaryblue);
   background-color: var(--grey);
 }
-input {
+.input {
   font-size: 2rem;
   background-color: var(--grey);
   border: none;
