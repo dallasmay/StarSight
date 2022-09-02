@@ -1,0 +1,27 @@
+.card-checked {
+  border-radius: 5px;
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  /* color: var(--lightpink); */
+  background-color: var(--lightblue);
+  padding: 2rem 0;
+  margin: 0 0 1.5rem 0;
+}
+.card-not-checked {
+  border-radius: 5px;
+  color: #a39499;
+  background-color: #2e3469;
+  padding: 2rem 0;
+  margin: 0 0 1.5rem 0;
+}
+.heading2 {
+  font-size: 5rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+.heading3 {
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 0 0;
+}

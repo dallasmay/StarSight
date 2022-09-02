@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import TrackPage from "./pages/TrackPage/TrackPage";
 import FindBodyPage from "./pages/FindBodyPage/FindBodyPage";
+import ChecklistPage from "./pages/ChecklistPage/ChecklistPage";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/find" element={<FindPage />} />
         <Route path="/find-body" element={<FindBodyPage />} />
         <Route path="/track" element={isLoggedIn ? <TrackPage /> : <Navigate to="/login" />} />
+        <Route path="/checklist" element={isLoggedIn ? <ChecklistPage /> : <Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage loggedInDrill={loggedInDrill} />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>

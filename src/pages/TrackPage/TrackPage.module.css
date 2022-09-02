@@ -17,6 +17,7 @@
   column-gap: 1.5rem;
 }
 .track-card {
+  /* background-color: var(--lightblue); */
   border: solid 2px var(--grey);
   border-radius: 2px;
   padding: 1rem;
@@ -30,6 +31,6 @@
   text-decoration: underline;
   text-underline-offset: .80rem;
 }
-.checklist {
+/* .checklist {
   background-color: green;
-}
+} */
