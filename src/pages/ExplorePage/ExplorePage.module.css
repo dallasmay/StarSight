@@ -26,7 +26,7 @@
   margin: 0;
   border-bottom: solid 4px var(--grey);
 }
-p {
+.description {
   margin: 1.5rem 0 5rem 0;
 }
 .btn {

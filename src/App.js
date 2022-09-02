@@ -12,7 +12,7 @@ import FindBodyPage from "./pages/FindBodyPage/FindBodyPage";
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const loggedInDrill = (state) => {
     console.log(`This is in the App component: ${state}`);

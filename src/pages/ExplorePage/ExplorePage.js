@@ -10,7 +10,7 @@ const ExplorePage = () => {
           <span className={styles["img-placeholder"]}></span>
           <div className={styles["content-container"]}>
             <h1 className={styles.heading1}>LOCATE</h1>
-            <p>
+            <p className={styles.description}>
               Find the moon, planets, and stars based off of your geographic
               location
             </p>
@@ -23,7 +23,9 @@ const ExplorePage = () => {
           <span className={styles["img-placeholder"]}></span>
           <div className={styles["content-container"]}>
             <h1 className={styles.heading1}>TRACK</h1>
-            <p>Track your progress as you journey through the stars</p>
+            <p className={styles.description}>
+              Track your progress as you journey through the stars
+            </p>
             <Link to="/track">
               <button className={styles.btn}>START</button>
             </Link>

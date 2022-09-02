@@ -1,0 +1,35 @@
+.container {
+  padding-top: 10rem;
+}
+.content-container {
+  padding: 2rem;
+}
+.heading1 {
+  font-size: 5rem;
+  font-weight: normal;
+  margin: 0 0 1.5rem 0;
+}
+.track-card-container {
+  /* display: flex;
+  justify-content: space-evenly; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1.5rem;
+}
+.track-card {
+  border: solid 2px var(--grey);
+  border-radius: 2px;
+  padding: 1rem;
+}
+.heading2 {
+  font-size: 3rem;
+  font-family: var(--ErnDemiBoldItalic);
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 0 0;
+  text-decoration: underline;
+  text-underline-offset: .80rem;
+}
+.checklist {
+  background-color: green;
+}
