@@ -6,6 +6,9 @@
   padding: 2rem 0;
   margin: 0 0 1.5rem 0;
 }
+.not-visible {
+  display: none;
+}
 .form-flex-container {
   display: flex;
   justify-content: center;

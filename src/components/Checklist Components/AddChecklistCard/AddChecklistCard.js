@@ -2,9 +2,9 @@ import Button from "../../Button/Button";
 
 import styles from "./AddChecklistCard.module.css";
 
-const AddChecklistCard = () => {
+const AddChecklistCard = (props) => {
   return (
-    <div className={styles.card}>
+    <div className={props.isVisible ? styles.card : styles["not-visible"]}>
       <div className={styles["form-flex-container"]}>
         <form>
           <input

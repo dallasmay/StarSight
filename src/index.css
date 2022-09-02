@@ -56,3 +56,18 @@ code {
   display: flex;
   justify-content: center;
 }
+/* ------SCROLL BAR */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--lightblue); 
+    border-radius: 10px;
+  }

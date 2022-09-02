@@ -3,6 +3,7 @@
   /* height: 100%; */
   background-color: var(--secondaryblue);
   margin: 0 auto;
+  overflow: auto;
 }
 .heading1 {
   /* color: var(--lightpink); */

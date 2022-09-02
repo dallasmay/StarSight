@@ -3,13 +3,13 @@
   height: 100vh;
   background-color: var(--secondaryblue);
   margin: 0 auto;
+  overflow: auto;
 }
 .checklist-container {
   padding: 10rem 0 0 0;
 }
 .content-container {
   padding: 2rem;
-  border: solid 1px red;
 }
 .heading1 {
   font-size: 5rem;
