@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "../Nav/Nav.module.css";
 
-const Nav = (props) => {
-  console.log(`This is in the Nav component: ${props.isLoggedIn}`);
-  return props.isLoggedIn ? (
+const Nav = () => {
+  const isLoggedIn = useSelector((state) => state.isAuthenticated);
+  return isLoggedIn ? (
     <nav className={styles.nav}>
       <ul className={styles["link-container"]}>
         <Link to="/explore">

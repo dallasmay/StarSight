@@ -1,29 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 
 import Button from "../Button/Button";
 
+import { authActions } from "../../ReduxStore/store";
 import styles from "./LoginModal.module.css";
 
-const LoginModal = (props) => {
+const LoginModal = () => {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const loginSubmitHandler = (evt) => {
     evt.preventDefault();
     let loginBody = {
       email,
       password,
-    }
+    };
     axios.post("http://localhost:4000/login", loginBody).then((res) => {
-      setIsLoggedIn(res.data);
-    });
-  }
-  useEffect(() => {
-    props.loggedInDrill(isLoggedIn);
-  }, [isLoggedIn]);
+      if (res.data === true) {
+        dispatch(authActions.login());
+      } else if (res.data === false) {
+        console.log("Email or password is incorrect")
+      }
+    }).catch(err => console.log(err));
+  };
 
   return (
     <div className={styles["modal-container"]}>

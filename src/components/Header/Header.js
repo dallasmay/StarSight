@@ -5,15 +5,14 @@ import { ReactComponent as Moon } from "../SVG/Moon.svg";
 
 import styles from "../Header/Header.module.css";
 
-const Header = (props) => {
-  console.log(`This is in the Header component: ${props.isLoggedIn}`);
+const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles["header-flex-container"]}>
         <Link to="/">
           <Moon className={styles.moon} />
         </Link>
-        <Nav isLoggedIn={props.isLoggedIn} />
+        <Nav />
       </div>
     </header>
   );
