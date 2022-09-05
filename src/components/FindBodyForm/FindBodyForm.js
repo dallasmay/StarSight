@@ -15,13 +15,12 @@ const FindBodyForm = () => {
   const findBodySubmitHandler = (evt) => {
     evt.preventDefault();
     const date = new Date();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
+    const month = `${date.getMonth() + 1}`.padStart(2, "0");
+    const day = `${date.getDate()}`.padStart(2, "0");
     const year = date.getFullYear();
-    // Adding a zero in front of month if less than 10 - api needs date in format 00:00:00
-    const userDate =
-      month < 10 ? `${year}-0${month}-${day}` : `${year}-${month}-${day}`;
+    const userDate = `${year}-${month}-${day}`;
     const userTime = `${date.getHours()}:${date.getMinutes()}:00`;
+
     let findBody = {
       body,
       latitude,
