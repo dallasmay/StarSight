@@ -1,17 +1,17 @@
 import styles from "./ChecklistCard.module.css";
 
-const ChecklistCard = () => {
+const ChecklistCard = (props) => {
   return (
-    <>
-      <div className={styles["card-checked"]}>
-        <h2 className={styles.heading2}>Andromeda</h2>
-        <h3 className={styles.heading3}>Galaxy</h3>
+    <div className={styles.card}>
+      <div
+        className={
+          props.isChecked ? styles["card-checked"] : styles["card-not-checked"]
+        }
+      >
+        <h2 className={styles.heading2}>{props.name}</h2>
+        <h3 className={styles.heading3}>{props.type}</h3>
       </div>
-      <div className={styles["card-not-checked"]}>
-        <h2 className={styles.heading2}>Andromeda</h2>
-        <h3 className={styles.heading3}>Galaxy</h3>
-      </div>
-    </>
+    </div>
   );
 };
 

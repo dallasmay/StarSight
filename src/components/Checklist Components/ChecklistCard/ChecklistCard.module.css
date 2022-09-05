@@ -1,3 +1,6 @@
+.card {
+  cursor: pointer;
+}
 .card-checked {
   border-radius: 5px;
   /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
