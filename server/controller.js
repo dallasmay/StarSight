@@ -52,7 +52,14 @@ CREATE TABLE galaxies (
   name VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL UNIQUE,
   password_hash VARCHAR(300) NOT NULL
-);`
+);
+  CREATE TABLE checklist (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES users(id),
+    name VARCHAR(75) NOT NULL,
+    type VARCHAR(25) NOT NULL,
+    isChecked BOOL NOT NULL
+  );`
       )
       .then(() => {
         res.status(200).send();
@@ -117,6 +124,18 @@ CREATE TABLE galaxies (
       .then((res) => {
         response.status(200).send(res.data);
       })
+      .catch((err) => console.log(err));
+  },
+  addChecklistItem: (req, res) => {
+    const { name, type, isChecked } = req.body;
+    sequelize
+      .query(
+        `INSERT INTO checklist (name, type, isChecked)
+    VALUES ('${name}', '${type}', '${isChecked}')`
+      )
+      .then((dbRes) => {
+        console.log(dbRes);
+        res.status(200).send("Checklist item successfully added")})
       .catch((err) => console.log(err));
   },
 };
