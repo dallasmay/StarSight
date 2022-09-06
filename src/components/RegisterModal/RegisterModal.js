@@ -46,7 +46,7 @@ const RegisterModal = () => {
       <h2 className={styles["modal-heading"]}>CREATE ACCOUNT</h2>
       <form className={styles["register-form"]} onSubmit={submitHandler}>
         <label htmlFor="name" className={styles.label}>
-          Name:
+          First Name:
         </label>
         <input
           type="text"

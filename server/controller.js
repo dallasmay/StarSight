@@ -88,14 +88,14 @@ CREATE TABLE galaxies (
   login: (req, res) => {
     const { email, password } = req.body;
     sequelize
-      .query(`SELECT password_hash FROM users WHERE email = '${email}'`)
+      .query(`SELECT password_hash, name, id FROM users WHERE email = '${email}'`)
       .then((dbRes) => {
-        const passHash = dbRes[0][0].password_hash;
+        const { password_hash: passHash, name, id: userId } = dbRes[0][0];
         bcrypt.compare(password, passHash, (err, result) => {
           if (err) {
             return console.log(err);
           } else {
-            return res.status(200).send(result);
+            return result ? res.status(200).send({result, name, userId}) : res.status(200).send({result});
           }
         });
       })
@@ -127,15 +127,15 @@ CREATE TABLE galaxies (
       .catch((err) => console.log(err));
   },
   addChecklistItem: (req, res) => {
-    const { name, type, isChecked } = req.body;
+    const { userId, name, type, isChecked } = req.body;
     sequelize
       .query(
-        `INSERT INTO checklist (name, type, isChecked)
-    VALUES ('${name}', '${type}', '${isChecked}')`
+        `INSERT INTO checklist (user_id, name, type, isChecked)
+    VALUES ('${userId}', '${name}', '${type}', '${isChecked}')`
       )
       .then((dbRes) => {
-        console.log(dbRes);
-        res.status(200).send("Checklist item successfully added")})
+        res.status(200).send("Checklist item successfully added");
+      })
       .catch((err) => console.log(err));
   },
 };

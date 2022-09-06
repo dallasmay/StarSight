@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "./TrackPage.module.css";
 
 const TrackPage = () => {
+  const firstName = useSelector((state) => state.name);
+
   return (
     <div className={styles.container}>
       <div className={styles["content-container"]}>
-        <h1 className={styles.heading1}>Welcome back, Dallas!</h1>
+        <h1 className={styles.heading1}>{`Welcome back, ${firstName}!`}</h1>
         <div className={styles["track-card-container"]}>
           <div className={`${styles["track-card"]} ${styles.checklist}`}>
             <h2 className={styles.heading2}>Checklist</h2>

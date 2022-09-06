@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import axios from "axios";
 
@@ -8,16 +9,18 @@ const AddChecklistCard = (props) => {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [isChecked, setIsChecked] = useState(null);
+  const userId = useSelector((state) => state.userId);
 
   const addChecklistCardHandler = (evt) => {
     evt.preventDefault();
     let checklistBody = {
+      userId,
       name,
       type,
       isChecked,
     };
     axios.post("http://localhost:4000/checklist", checklistBody).then((res) => {
-      console.log(res)
+      console.log(res.data);
     });
     props.setItemsArr(checklistBody);
     props.setFormVisibility(false);

@@ -14,19 +14,28 @@ const LoginModal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   const loginSubmitHandler = (evt) => {
     evt.preventDefault();
     let loginBody = {
       email,
       password,
     };
-    axios.post("http://localhost:4000/login", loginBody).then((res) => {
-      if (res.data === true) {
-        dispatch(authActions.login());
-      } else if (res.data === false) {
-        console.log("Email or password is incorrect")
-      }
-    }).catch(err => console.log(err));
+    axios
+      .post("http://localhost:4000/login", loginBody)
+      .then((res) => {
+        if (res.data.result === true) {
+          const { name, userId } = res.data;
+
+          dispatch(authActions.login());
+          dispatch(authActions.setUserId(userId));
+          dispatch(authActions.setName(`${name}`));
+          
+        } else if (res.data.result === false) {
+          console.log("Email or password is incorrect");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
