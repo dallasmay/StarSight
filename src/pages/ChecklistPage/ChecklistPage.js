@@ -36,6 +36,7 @@ const ChecklistPage = () => {
       .then((res) => {
         setChecklistItems(res.data[0]);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setFormVisibility = (bool) => {
@@ -68,6 +69,7 @@ const ChecklistPage = () => {
                 name={ele.name}
                 type={ele.type}
                 isChecked={ele.ischecked}
+                key={ele.id}
               />
             );
           })}

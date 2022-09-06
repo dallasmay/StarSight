@@ -8,6 +8,11 @@
   background-color: var(--lightblue);
   padding: 2rem 0;
   margin: 0 0 1.5rem 0;
+  transition-duration: 0.5s;
+}
+.card-checked:hover {
+  background-color: #6167b3;
+  transition-duration: 0.5s;
 }
 .card-not-checked {
   border-radius: 5px;
@@ -15,6 +20,11 @@
   background-color: #2e3469;
   padding: 2rem 0;
   margin: 0 0 1.5rem 0;
+  transition-duration: 0.5s;
+}
+.card-not-checked:hover {
+  background-color: #3a4185;
+  transition-duration: 0.5s;
 }
 .heading2 {
   font-size: 5rem;

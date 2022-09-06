@@ -135,10 +135,11 @@ CREATE TABLE galaxies (
     sequelize
       .query(
         `INSERT INTO checklist (user_id, name, type, isChecked)
-    VALUES ('${userId}', $$${name}$$, '${type}', '${ischecked}')`
+    VALUES ('${userId}', $$${name}$$, '${type}', '${ischecked}')
+    RETURNING *;`
       )
       .then((dbRes) => {
-        res.status(200).send("Checklist item successfully added");
+        res.status(200).send(dbRes);
       })
       .catch((err) => console.log(err));
   },
