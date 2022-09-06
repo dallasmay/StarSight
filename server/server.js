@@ -15,6 +15,7 @@ const {
   login,
   findBody,
   addChecklistItem,
+  updateChecklistItem,
   getAllChecklistItems,
 } = require("./controller");
 
@@ -28,6 +29,7 @@ app.post("/login", login);
 app.post("/find-body", findBody);
 
 app.post("/checklist", addChecklistItem);
+app.put("/checklist", updateChecklistItem);
 
 app.post("/checklist-items", getAllChecklistItems);
 

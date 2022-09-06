@@ -27,6 +27,22 @@ const ChecklistPage = () => {
     });
   };
 
+  const updateItemsArr = (updateObj) => {
+    setChecklistItems((prevState) => {
+      let arrCopy = [...prevState];
+      let itemIndex;
+      arrCopy.find((ele, index) => {
+        if (ele.id === updateObj.id) {
+          itemIndex = index;
+          return;
+        }
+      });
+      arrCopy.splice(itemIndex, 1);
+      let newArray = [...arrCopy, updateObj]
+      return newArray;
+    });
+  };
+
   useEffect(() => {
     let userIdBody = {
       userId,
@@ -64,14 +80,32 @@ const ChecklistPage = () => {
             setFormVisibility={setFormVisibility}
           />
           {checklistItems.map((ele) => {
-            return (
-              <ChecklistCard
-                name={ele.name}
-                type={ele.type}
-                isChecked={ele.ischecked}
-                key={ele.id}
-              />
-            );
+            if (ele.ischecked) {
+              return (
+                <ChecklistCard
+                  name={ele.name}
+                  type={ele.type}
+                  isChecked={ele.ischecked}
+                  key={ele.id}
+                  id={ele.id}
+                  updateItemsArr={updateItemsArr}
+                />
+              );
+            }
+          })}
+          {checklistItems.map((ele) => {
+            if (!ele.ischecked) {
+              return (
+                <ChecklistCard
+                  name={ele.name}
+                  type={ele.type}
+                  isChecked={ele.ischecked}
+                  key={ele.id}
+                  id={ele.id}
+                  updateItemsArr={updateItemsArr}
+                />
+              );
+            }
           })}
         </div>
       </div>

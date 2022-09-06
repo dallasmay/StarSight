@@ -152,4 +152,12 @@ CREATE TABLE galaxies (
       })
       .catch((err) => console.log(err));
   },
+  updateChecklistItem: (req, res) => {
+    const { itemId, newCheckedStatus } = req.body;
+    sequelize.query(
+      `UPDATE checklist SET ischecked = '${newCheckedStatus}' WHERE id = ${itemId} RETURNING *`
+    ).then((dbRes) => {
+      res.status(200).send(dbRes)
+    }).catch(err => res.status(400).send(err));
+  },
 };
