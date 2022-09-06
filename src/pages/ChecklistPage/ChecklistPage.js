@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 import ChecklistCard from "../../components/Checklist Components/ChecklistCard/ChecklistCard";
 import AddChecklistCard from "../../components/Checklist Components/AddChecklistCard/AddChecklistCard";
@@ -6,12 +8,10 @@ import AddChecklistCard from "../../components/Checklist Components/AddChecklist
 import styles from "./ChecklistPage.module.css";
 
 const ChecklistPage = () => {
+  const userId = useSelector((state) => state.userId);
+
   const [formIsVisible, setFormIsVisible] = useState(false);
-  const [checklistItems, setChecklistItems] = useState([
-    { name: "Andromeda", type: "Galaxy", isChecked: true },
-    { name: "Orion", type: "Star", isChecked: false },
-    { name: "Sirius", type: "Star", isChecked: true },
-  ]);
+  const [checklistItems, setChecklistItems] = useState([]);
 
   const addBtnClickHandler = () => {
     if (formIsVisible) {
@@ -27,9 +27,20 @@ const ChecklistPage = () => {
     });
   };
 
+  useEffect(() => {
+    let userIdBody = {
+      userId,
+    };
+    axios
+      .post("http://localhost:4000/checklist-items", userIdBody)
+      .then((res) => {
+        setChecklistItems(res.data[0]);
+      });
+  }, []);
+
   const setFormVisibility = (bool) => {
     setFormIsVisible(bool);
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -56,7 +67,7 @@ const ChecklistPage = () => {
               <ChecklistCard
                 name={ele.name}
                 type={ele.type}
-                isChecked={ele.isChecked}
+                isChecked={ele.ischecked}
               />
             );
           })}

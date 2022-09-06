@@ -15,6 +15,7 @@ const {
   login,
   findBody,
   addChecklistItem,
+  getAllChecklistItems,
 } = require("./controller");
 
 // DEV ENDPOINTS
@@ -26,7 +27,9 @@ app.post("/login", login);
 
 app.post("/find-body", findBody);
 
-app.post("/checklist", addChecklistItem)
+app.post("/checklist", addChecklistItem);
+
+app.post("/checklist-items", getAllChecklistItems);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server running on port ${SERVER_PORT}`);
