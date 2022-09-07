@@ -2,22 +2,23 @@
   cursor: pointer;
 }
 .card-checked {
+  position: relative;
   border-radius: 5px;
   /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
   /* color: var(--lightpink); */
   background-color: var(--lightblue);
   padding: 1.5rem 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0.5rem 0 1.5rem 0;
   transition-duration: 0.5s;
 }
 .card-checked:hover {
-  background-color: #6167b3;
+  background-color: #505aad;
   transition-duration: 0.5s;
 }
 .flexTest {
   display: flex;
-  justify-content: space-between;
-  margin: 0 0 .5rem 0;
+  justify-content: center;
+  margin: 0 0 0.5rem 0;
 }
 .heading2 {
   font-size: 5rem;
@@ -25,12 +26,30 @@
   text-align: center;
   margin: 0 0 0 0;
 }
-.heading3 {
+.date {
+  position: absolute;
+  left: 10px;
   font-size: 2rem;
   font-weight: normal;
   text-align: center;
   margin: 0 0 0.75rem 0;
   padding: 0 0 0 1rem;
+}
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: var(--grey);
+  background-color: transparent;
+  border: none;
+  font-size: 4rem;
+  padding: 0;
+  transition-duration: 0.5s;
+}
+.delete-btn:hover {
+  cursor: pointer;
+  color: #92868a;
+  transition-duration: 0.5s;
 }
 .note-text {
   font-size: 3rem;

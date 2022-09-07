@@ -8,8 +8,22 @@ import NoteCard from "../../components/Notes Components/NoteCard/NoteCard";
 import styles from "./NotesPage.module.css";
 
 const NotesPage = () => {
+
+  const tempCard = [
+    {
+      title: "Title",
+      note: "This a note that i'm writing so I have copy in my card lorem ipsum bippity boppity tripsum blipsum missum sans e plurbus unum",
+      date: "2022-08-09",
+    },
+    {
+      title: "Title",
+      note: "This a note that i'm writing so I have copy in my card lorem ipsum bippity boppity tripsum blipsum missum sans e plurbus unum",
+      date: "2022-08-09",
+    },
+  ];
+
   const [formVisibility, setFormVisibility] = useState(false);
-  const [notesList, setNotesList] = useState([]);
+  const [notesList, setNotesList] = useState(tempCard);
   const userId = useSelector((state) => state.userId);
 
   const toggleFormHandler = () => {
@@ -23,11 +37,11 @@ const NotesPage = () => {
       userId,
     };
 
-    axios
-      .post("http://localhost:4000/notes-items", getItemsBody)
-      .then((res) => {
-        setNotesList(res.data[0]);
-      });
+    // axios
+    //   .post("http://localhost:4000/notes-items", getItemsBody)
+    //   .then((res) => {
+    //     setNotesList(res.data[0]);
+    //   });
   }, []);
 
   return (
