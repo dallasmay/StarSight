@@ -183,4 +183,18 @@ CREATE TABLE galaxies (
       })
       .catch((err) => console.log(err));
   },
+  getAllNoteItems: (req, res) => {
+    const { userId } = req.body;
+
+    sequelize
+      .query(
+        `SELECT * FROM notes 
+      WHERE user_id = ${userId}
+      ORDER BY id DESC`
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes);
+      })
+      .catch((err) => console.log(err));
+  },
 };

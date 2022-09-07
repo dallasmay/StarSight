@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 import AddNote from "../../components/Notes Components/AddNote/AddNote";
 import NoteCard from "../../components/Notes Components/NoteCard/NoteCard";
@@ -7,13 +9,8 @@ import styles from "./NotesPage.module.css";
 
 const NotesPage = () => {
   const [formVisibility, setFormVisibility] = useState(false);
-  const [testText, setTestText] = useState(`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-            explicabo amet tempore, cumque neque.`)
-  const [testText1, setTestText1] =
-    useState(`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-            explicabo amet tempore, cumque neque.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-            explicabo amet tempore, cumque neque.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-            explicabo amet tempore, cumque neque.`);
+  const [notesList, setNotesList] = useState([]);
+  const userId = useSelector((state) => state.userId);
 
   const toggleFormHandler = () => {
     setFormVisibility((prevState) => {
@@ -21,6 +18,17 @@ const NotesPage = () => {
     });
   };
 
+  useEffect(() => {
+    const getItemsBody = {
+      userId,
+    };
+
+    axios
+      .post("http://localhost:4000/notes-items", getItemsBody)
+      .then((res) => {
+        setNotesList(res.data[0]);
+      });
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -34,10 +42,13 @@ const NotesPage = () => {
               </button>
             </div>
           </div>
-          <AddNote formVisibility={formVisibility} toggleForm={toggleFormHandler}/>
-          <NoteCard text={testText}/>
-          <NoteCard text1={testText1}/>
-          <NoteCard />
+          <AddNote
+            formVisibility={formVisibility}
+            toggleForm={toggleFormHandler}
+          />
+          {notesList.map((ele) => {
+            return <NoteCard key={ele.id} noteId={ele.id} title={ele.title} note={ele.note} date={ele.date} />
+          })}
         </div>
       </div>
     </div>
