@@ -1,0 +1,38 @@
+.container {
+  width: 75%;
+  height: 100vh;
+  background-color: var(--secondaryblue);
+  margin: 0 auto;
+  overflow: auto;
+}
+.checklist-container {
+  padding: 10rem 0 0 0;
+}
+.content-container {
+  padding: 2rem;
+}
+.heading1 {
+  font-size: 5rem;
+  font-weight: normal;
+  /* text-align: center; */
+  margin: 0 0 0 0;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-btn {
+  color: var(--darkblue);
+  background-color: var(--grey);
+  font-size: 3rem;
+  padding: .5rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  transition-duration: 0.5s;
+}
+.add-btn:hover {
+  background-color: #bdacb1;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}

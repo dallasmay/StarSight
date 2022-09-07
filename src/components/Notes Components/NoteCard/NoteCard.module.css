@@ -1,0 +1,40 @@
+.card {
+  cursor: pointer;
+}
+.card-checked {
+  border-radius: 5px;
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  /* color: var(--lightpink); */
+  background-color: var(--lightblue);
+  padding: 1.5rem 0;
+  margin: 0 0 1.5rem 0;
+  transition-duration: 0.5s;
+}
+.card-checked:hover {
+  background-color: #6167b3;
+  transition-duration: 0.5s;
+}
+.flexTest {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 .5rem 0;
+}
+.heading2 {
+  font-size: 5rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+.heading3 {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 0.75rem 0;
+  padding: 0 0 0 1rem;
+}
+.note-text {
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 0 0;
+}

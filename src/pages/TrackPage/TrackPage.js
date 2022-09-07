@@ -28,7 +28,9 @@ const TrackPage = () => {
           </div>
           <div className={`${styles["track-card"]} ${styles.notes}`}>
             <h2 className={styles.heading2}>Notes</h2>
-            <button>View Notes</button>
+            <Link to="/notes">
+              <button>View Notes</button>
+            </Link>
           </div>
         </div>
       </div>

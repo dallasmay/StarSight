@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import TrackPage from "./pages/TrackPage/TrackPage";
 import FindBodyPage from "./pages/FindBodyPage/FindBodyPage";
 import ChecklistPage from "./pages/ChecklistPage/ChecklistPage";
+import NotesPage from "./pages/NotesPage/NotesPage";
 
 function App() {
   const isAuth = useSelector((state) => state.isAuthenticated);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/find-body" element={<FindBodyPage />} />
         <Route path="/track" element={isAuth ? <TrackPage /> : <Navigate to="/login" />} />
         <Route path="/checklist" element={isAuth ? <ChecklistPage /> : <Navigate to="/login" />} />
+        <Route path="/notes" element={isAuth ? <NotesPage /> : <Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
