@@ -21,6 +21,7 @@ const NotesPage = () => {
     });
   };
 
+
   return (
     <div className={styles.container}>
       <div className={styles["checklist-container"]}>
@@ -33,7 +34,7 @@ const NotesPage = () => {
               </button>
             </div>
           </div>
-          <AddNote formVisibility={formVisibility} />
+          <AddNote formVisibility={formVisibility} toggleForm={toggleFormHandler}/>
           <NoteCard text={testText}/>
           <NoteCard text1={testText1}/>
           <NoteCard />

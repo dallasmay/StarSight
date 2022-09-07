@@ -17,6 +17,7 @@ const {
   addChecklistItem,
   updateChecklistItem,
   getAllChecklistItems,
+  addNoteItem,
 } = require("./controller");
 
 // DEV ENDPOINTS
@@ -32,6 +33,8 @@ app.post("/checklist", addChecklistItem);
 app.put("/checklist", updateChecklistItem);
 
 app.post("/checklist-items", getAllChecklistItems);
+
+app.post("/notes", addNoteItem);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server running on port ${SERVER_PORT}`);

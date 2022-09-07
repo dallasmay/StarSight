@@ -59,6 +59,13 @@ CREATE TABLE galaxies (
     name VARCHAR(75) NOT NULL,
     type VARCHAR(25) NOT NULL,
     isChecked BOOL NOT NULL
+  );
+  CREATE TABLE notes (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES users(id),
+    title VARCHAR(50) NOT NULL,
+    note VARCHAR(1000) NOT NULL,
+    date DATE NOT NULL DEFAULT CURRENT_DATE
   );`
       )
       .then(() => {
@@ -154,10 +161,26 @@ CREATE TABLE galaxies (
   },
   updateChecklistItem: (req, res) => {
     const { itemId, newCheckedStatus } = req.body;
-    sequelize.query(
-      `UPDATE checklist SET ischecked = '${newCheckedStatus}' WHERE id = ${itemId} RETURNING *`
-    ).then((dbRes) => {
-      res.status(200).send(dbRes)
-    }).catch(err => res.status(400).send(err));
+    sequelize
+      .query(
+        `UPDATE checklist SET ischecked = '${newCheckedStatus}' WHERE id = ${itemId} RETURNING *`
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes);
+      })
+      .catch((err) => res.status(400).send(err));
+  },
+  addNoteItem: (req, res) => {
+    const { userId, title, note } = req.body;
+    sequelize
+      .query(
+        `INSERT INTO notes (user_id, title, note)
+    VALUES ('${userId}', $$${title}$$, $$${note}$$)
+    RETURNING *`
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes);
+      })
+      .catch((err) => console.log(err));
   },
 };
