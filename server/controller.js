@@ -134,6 +134,7 @@ CREATE TABLE galaxies (
       )
       .then((res) => {
         response.status(200).send(res.data);
+        console.log(res.data)
       })
       .catch((err) => console.log(err));
   },

@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 import styles from "./FindBodyForm.module.css";
 
-const FindBodyForm = () => {
+const FindBodyForm = (props) => {
   const [body, setBody] = useState("");
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
@@ -19,7 +19,9 @@ const FindBodyForm = () => {
     const day = `${date.getDate()}`.padStart(2, "0");
     const year = date.getFullYear();
     const userDate = `${year}-${month}-${day}`;
-    const userTime = `${date.getHours()}:${date.getMinutes()}:00`;
+    const hours = `${date.getHours()}`.padStart(2, "0");
+    const minutes = `${date.getMinutes()}`.padStart(2, "0");
+    const userTime = `${hours}:${minutes}:00`;
 
     let findBody = {
       body,
@@ -30,7 +32,15 @@ const FindBodyForm = () => {
       userDate,
       userTime,
     };
-    axios.post("http://localhost:4000/find-body", findBody).then((res) => console.log(res.data.data.table.rows[0].cells[0].position.horizontal));
+    
+    axios
+      .post("http://localhost:4000/find-body", findBody)
+      .then((res) => {
+        props.bodyPositionDrill(
+          res.data.data.table.rows[0].cells[0].position.horizontal
+        );
+        props.toggleBodyResult();
+      });
   };
 
   return (
@@ -44,6 +54,7 @@ const FindBodyForm = () => {
           setBody(evt.target.value);
         }}
       >
+        <option value="null">Select</option>
         <option value="moon">Moon</option>
         <option value="mercury">Mercury</option>
         <option value="venus">Venus</option>
@@ -102,7 +113,7 @@ const FindBodyForm = () => {
         onChange={(evt) => setUnit(evt.target.id)}
       />
       <label htmlFor="meters">in meters</label>
-      <div>
+      <div className={styles["btn-container"]}>
         <Button>FIND</Button>
       </div>
     </form>

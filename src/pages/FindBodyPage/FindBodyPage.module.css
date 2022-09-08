@@ -1,8 +1,9 @@
 .find-body-container {
   width: 75%;
-  height: 100%;
+  height: 100vh;
   background-color: var(--secondaryblue);
   margin: 0 auto;
+  overflow: auto;
 }
 .heading1 {
   /* color: var(--lightpink); */

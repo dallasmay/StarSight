@@ -6,7 +6,7 @@
   font-size: 4rem;
   font-weight: normal;
   display: block;
-  /* margin-bottom: 0; */
+  margin: 3rem 0 1rem 0; 
 }
 select {
   font-family: var(--ErnRegular);
@@ -16,9 +16,15 @@ select {
 }
 .input {
   font-size: 2rem;
+  color: var(--darkblue);
   background-color: var(--grey);
   border: none;
   margin: 0 1rem 1rem 1rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2.5rem 0;
 }
 .coords {
   font-size: 3.5rem;
