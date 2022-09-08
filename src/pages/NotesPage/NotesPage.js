@@ -8,22 +8,21 @@ import NoteCard from "../../components/Notes Components/NoteCard/NoteCard";
 import styles from "./NotesPage.module.css";
 
 const NotesPage = () => {
-
-  const tempCard = [
-    {
-      title: "Title",
-      note: "This a note that i'm writing so I have copy in my card lorem ipsum bippity boppity tripsum blipsum missum sans e plurbus unum",
-      date: "2022-08-09",
-    },
-    {
-      title: "Title",
-      note: "This a note that i'm writing so I have copy in my card lorem ipsum bippity boppity tripsum blipsum missum sans e plurbus unum",
-      date: "2022-08-09",
-    },
-  ];
+  // const tempCard = [
+  //   {
+  //     title: "Title",
+  //     note: "This a note that i'm writing so I have copy in my card lorem ipsum bippity boppity tripsum blipsum missum sans e plurbus unum",
+  //     date: "2022-08-09",
+  //   },
+  //   {
+  //     title: "Title",
+  //     note: "This a note that i'm writing so I have copy in my card lorem ipsum bippity boppity tripsum blipsum missum sans e plurbus unum",
+  //     date: "2022-08-09",
+  //   },
+  // ];
 
   const [formVisibility, setFormVisibility] = useState(false);
-  const [notesList, setNotesList] = useState(tempCard);
+  const [notesList, setNotesList] = useState([]);
   const userId = useSelector((state) => state.userId);
 
   const toggleFormHandler = () => {
@@ -32,16 +31,37 @@ const NotesPage = () => {
     });
   };
 
+  const addNote = (noteObj) => {
+    setNotesList((prevState) => {
+      return [noteObj, ...prevState];
+    });
+  };
+
+  const deleteNote = (noteId) => {
+    setNotesList((prevState) => {
+      let arrCopy = [...prevState];
+      let itemIndex;
+      arrCopy.find((ele, index) => {
+        if (ele.id === noteId) {
+          itemIndex = index;
+          return;
+        }
+      });
+      arrCopy.splice(itemIndex, 1);
+      return arrCopy;
+    })
+  }
+
   useEffect(() => {
     const getItemsBody = {
       userId,
     };
 
-    // axios
-    //   .post("http://localhost:4000/notes-items", getItemsBody)
-    //   .then((res) => {
-    //     setNotesList(res.data[0]);
-    //   });
+    axios
+      .post("http://localhost:4000/notes-items", getItemsBody)
+      .then((res) => {
+        setNotesList(res.data[0]);
+      });
   }, []);
 
   return (
@@ -59,9 +79,19 @@ const NotesPage = () => {
           <AddNote
             formVisibility={formVisibility}
             toggleForm={toggleFormHandler}
+            addNote={addNote}
           />
           {notesList.map((ele) => {
-            return <NoteCard key={ele.id} noteId={ele.id} title={ele.title} note={ele.note} date={ele.date} />
+            return (
+              <NoteCard
+                key={ele.id}
+                noteId={ele.id}
+                title={ele.title}
+                note={ele.note}
+                date={ele.date}
+                deleteNote={deleteNote}
+              />
+            );
           })}
         </div>
       </div>

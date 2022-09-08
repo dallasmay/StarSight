@@ -19,6 +19,7 @@ const {
   getAllChecklistItems,
   addNoteItem,
   getAllNoteItems,
+  deleteNoteItem,
 } = require("./controller");
 
 // DEV ENDPOINTS
@@ -36,6 +37,7 @@ app.put("/checklist", updateChecklistItem);
 app.post("/checklist-items", getAllChecklistItems);
 
 app.post("/notes", addNoteItem);
+app.post("/delete-note", deleteNoteItem);
 
 app.post("/notes-items", getAllNoteItems)
 

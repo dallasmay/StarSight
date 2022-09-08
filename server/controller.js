@@ -197,4 +197,11 @@ CREATE TABLE galaxies (
       })
       .catch((err) => console.log(err));
   },
+  deleteNoteItem: (req, res) => {
+    const { noteId } = req.body;
+
+    sequelize.query(`DELETE FROM notes WHERE id = ${noteId}`).then(() => {
+      res.status(200).send("Note successfully deleted")
+    }).catch((err) => console.log(err));
+  }
 };

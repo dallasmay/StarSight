@@ -19,10 +19,7 @@ const AddNote = (props) => {
     };
 
     axios.post("http://localhost:4000/notes", noteBody).then((res) => {
-      const { id: noteId, title, note, date } = res.data[0][0];
-      console.log(noteId, title, note, date);
-
-
+      props.addNote(res.data[0][0]);
       evt.target.reset();
       props.toggleForm();
     }).catch((err) => console.log(err));
