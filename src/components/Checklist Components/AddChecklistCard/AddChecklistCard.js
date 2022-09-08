@@ -21,6 +21,7 @@ const AddChecklistCard = (props) => {
     };
     axios.post("http://localhost:4000/checklist", checklistBody).then((res) => {
       props.setItemsArr(res.data[0][0]);
+      evt.target.reset();
     });
     props.setFormVisibility(false);
   };

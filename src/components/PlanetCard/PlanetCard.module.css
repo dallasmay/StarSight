@@ -10,7 +10,7 @@
 .card p {
   font-size: 2rem;
   text-align: center;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   margin: 0 5rem;
 }
 .moon {

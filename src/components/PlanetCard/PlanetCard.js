@@ -5,14 +5,14 @@ import { ReactComponent as Moon } from "../SVG/Moon.svg";
 
 import Button from "../Button/Button"
 
-const PlanetCard = () => {
+const PlanetCard = (props) => {
   return (
     <div className={styles.card}>
-      <Moon className={styles.moon} />
-      <h2 className={styles["planet-name"]}>MOON</h2>
+      {/* <Moon className={styles.moon} /> */}
+      {props.children}
+      <h2 className={styles["planet-name"]}>{props.name}</h2>
       <p>
-        One of the most well-known celestial bodies, the moon orbits the Earth
-        every 27.3 days and is the force behind our ocean tides
+        {props.desc}
       </p>
       <Link to="/find-body">
         <Button>FIND</Button>

@@ -14,3 +14,16 @@
   padding: 12rem 0 0 0;
   text-align: center;
 }
+.heading2 {
+  font-family: var(--ErnRegular);
+  font-size: 5rem;
+  font-weight: normal;
+  margin: 0 0 3rem 0;
+  padding: 2rem 0 0 0;
+  text-align: center;
+}
+.planet {
+  height: 10rem;
+  width: 20rem;
+  padding: 2rem 0;
+}
