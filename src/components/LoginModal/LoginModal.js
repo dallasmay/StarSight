@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
@@ -10,6 +10,7 @@ import styles from "./LoginModal.module.css";
 
 const LoginModal = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,9 +31,10 @@ const LoginModal = () => {
           dispatch(authActions.login());
           dispatch(authActions.setUserId(userId));
           dispatch(authActions.setName(`${name}`));
+          navigate("/track")
           
         } else if (res.data.result === false) {
-          console.log("Email or password is incorrect");
+          alert("Email or password is incorrect");
         }
       })
       .catch((err) => console.log(err));

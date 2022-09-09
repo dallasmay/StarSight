@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--lightblue);
+  background-color: var(--darkblue);
   top: 0;
   left: 0;
   position: fixed;
@@ -9,7 +9,7 @@
 .header-flex-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 .heading {
   /* display: inline; */

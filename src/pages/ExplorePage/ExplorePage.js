@@ -9,7 +9,7 @@ const ExplorePage = () => {
         <div className={styles["explore-card"]}>
           <span className={styles["img-placeholder"]}></span>
           <div className={styles["content-container"]}>
-            <h1 className={styles.heading1}>LOCATE</h1>
+            <h1 className={styles.heading1}>FIND</h1>
             <p className={styles.description}>
               Find the moon, planets, and stars based off of your geographic
               location
