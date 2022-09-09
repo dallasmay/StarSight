@@ -29,6 +29,7 @@
 
 html {
   font-size: 62.5%;
+  background-color: var(--darkblue);
 }
 
 body {
@@ -37,17 +38,19 @@ body {
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   font-size: 1.6rem;
-  height: 100%;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   background-color: var(--darkblue);
+  background: url(./components/SVG/StarsSVG5.svg) no-repeat center center fixed;
+  background-size: cover;
   color: var(--grey);
   /* padding-top: 96.4px; */
 }
-#root {
+/* #root {
   height: 100vh;
-}
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

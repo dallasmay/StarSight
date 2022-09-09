@@ -33,6 +33,7 @@
   color: var(--grey);
   background-color: var(--lightblue);
   padding: .5rem 1.5rem;
+  margin: 0 1rem 0 0;
   border: none;
   border-radius: 10px;
   transition-duration: 0.5s;

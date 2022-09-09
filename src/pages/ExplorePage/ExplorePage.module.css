@@ -7,8 +7,10 @@
 .explore-card {
   display: flex;
   justify-content: flex-start;
-  padding: 0 0 0 3rem;
-  margin: 0 0 5rem 0;
+  background-color: var(--lightblue);
+  padding: 3rem 0 3rem 3rem;
+  margin: 3rem 2rem 3rem 2rem;
+  border-radius: 15px;
 }
 .img-placeholder {
   display: inline-block;
@@ -16,8 +18,16 @@
   width: 300px;
   background-color: grey;
 }
+.telescope {
+  width: 25rem;
+  margin: 0 0 0 2rem;
+}
+.planet-star-icon {
+  width: 25rem;
+  margin: 0 0 0 2rem;
+}
 .content-container {
-  margin: 0 0 0 3rem;
+  margin: 0 0 0 6rem;
 }
 .heading1 {
     display: inline;
@@ -33,7 +43,7 @@
   font-size: 2rem;
   font-family: var(--ErnRegular);
   color: var(--grey);
-  background-color: var(--secondaryblue);
+  background-color: var(--lightblue);
   padding: 0.75rem 3rem;
   border: solid 2px var(--grey);
   border-radius: 25px;

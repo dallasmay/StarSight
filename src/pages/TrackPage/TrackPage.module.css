@@ -7,7 +7,7 @@
 .heading1 {
   font-size: 5rem;
   font-weight: normal;
-  margin: 0 0 1.5rem 0;
+  margin: 0 2rem 1.5rem 2rem;
 }
 .track-card-container {
   /* display: flex;
@@ -15,21 +15,45 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 1.5rem;
+  padding: 0 2rem;
 }
 .track-card {
-  /* background-color: var(--lightblue); */
-  border: solid 2px var(--grey);
-  border-radius: 2px;
+  background-color: var(--lightblue);
+  /* border: solid 2px var(--grey); */
+  border-radius: 6px;
   padding: 1rem;
 }
+.text-container {
+  height: 55%;
+}
 .heading2 {
-  font-size: 3rem;
-  font-family: var(--ErnDemiBoldItalic);
+  font-size: 4rem;
+  font-family: var(--ErnRegular);
   font-weight: normal;
   text-align: center;
   margin: 0 0 0 0;
   text-decoration: underline;
-  text-underline-offset: .80rem;
+  text-underline-offset: 1rem;
+}
+.track-card-description {
+  font-size: 2rem;
+  padding: 0 .5rem;
+}
+.track-btn {
+  font-family: var(--ErnRegular);
+  font-size: 2rem;
+  color: var(--lightblue);
+  background-color: var(--lightpink);
+  padding: .75rem 1.5rem;
+  margin: 3rem 0 2rem 0;
+  border-radius: 5px;
+  border: none;
+  transition-duration: 0.5s;
+}
+.track-btn:hover {
+  cursor: pointer;
+  background-color: #b18dad;
+  transition-duration: 0.5s;
 }
 /* .checklist {
   background-color: green;
