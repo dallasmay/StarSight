@@ -8,6 +8,7 @@ import styles from "./FindBodyPage.module.css";
 const FindBodyPage = () => {
   const [bodyPosition, setBodyPosition] = useState("");
   const [isResultVisible, setIsResultVisible] = useState(false);
+  const [isMarsWeatherVisible, setIsMarsWeatherVisible] = useState(false);
 
   const scroll = useRef(null);
 
@@ -25,6 +26,12 @@ const FindBodyPage = () => {
     });
   };
 
+  const toggleMarsWeatherVisibility = () => {
+    setIsMarsWeatherVisible((prevState) => {
+      return !prevState
+    })
+  }
+
   useEffect(() => {
     scroll.current.scrollTo(0, 0);
   }, [bodyPosition]);
@@ -32,6 +39,14 @@ const FindBodyPage = () => {
   return (
     <div className={styles["find-body-container"]} ref={scroll}>
       {isResultVisible && <FindBodyResult bodyPosition={bodyPosition} />}
+      {isMarsWeatherVisible && (
+        <iframe
+          src="https://mars.nasa.gov/layout/embed/image/mslweather/"
+          className={styles["mars-weather"]}
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      )}
 
       <h1 className={styles.heading1}>
         Find the moon, planets, and stars in the night sky
@@ -39,6 +54,8 @@ const FindBodyPage = () => {
       <FindBodyForm
         bodyPositionDrill={bodyPositionDrill}
         toggleBodyResult={toggleBodyResult}
+        toggleMarsWeatherVisibility={toggleMarsWeatherVisibility}
+        isMarsWeatherVisible={isMarsWeatherVisible}
       />
     </div>
   );

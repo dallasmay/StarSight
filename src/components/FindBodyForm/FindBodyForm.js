@@ -32,15 +32,21 @@ const FindBodyForm = (props) => {
       userDate,
       userTime,
     };
-    
-    axios
-      .post("http://localhost:4000/find-body", findBody)
-      .then((res) => {
-        props.bodyPositionDrill(
-          res.data.data.table.rows[0].cells[0].position.horizontal
-        );
+
+    axios.post("http://localhost:4000/find-body", findBody).then((res) => {
+      props.bodyPositionDrill(
+        res.data.data.table.rows[0].cells[0].position.horizontal
+      );
+      if (findBody.body === "mars") {
         props.toggleBodyResult();
-      });
+        props.toggleMarsWeatherVisibility();
+      } else {
+        if (props.isMarsWeatherVisible) {
+          props.toggleMarsWeatherVisibility();
+        }
+        props.toggleBodyResult();
+      }
+    });
   };
 
   return (
