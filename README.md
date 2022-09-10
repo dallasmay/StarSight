@@ -10,7 +10,7 @@ The checklist allows users to add celestial bodies and events and check them off
 #### Notes
 Users can add general notes related to their astronomy journey. Notes are sorted based on date added.
 ## Tech Stack
-StarSight was built with React.js and Redux for the front-end, Node.js with Express.js for the server, and a PostgreSQL database. User passwords are hashed using Bcrypt. The UI was designed by me using Adobe Illustrator and Figma.
+StarSight was built with React.js and Redux for the front-end, Node.js with Express.js for the server, and a PostgreSQL database. The Astronomy API was also used. User passwords are hashed using Bcrypt. The UI was designed by me using Adobe Illustrator and Figma.
 ## UI Images
 ![Screenshot of landing page. Dark blue background with the words "Astronomy Made Easy" in the middle with illustrated stars, moon and the big dipper surrounding it.](/StarSightScreenshots/LandingPage.jpg?raw=true "Landing Page")
 ![Screenshot of Find Page. Heading stating "Find the moon, planets, and stars in the night sky". Four cards are shown with illustrations of the Moon, Mercury, Venus, and Mars along with brief descriptions of them](/StarSightScreenshots/FindPage.jpg?raw=true "Find Page")
